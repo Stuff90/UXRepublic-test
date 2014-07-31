@@ -1,0 +1,11 @@
+{
+	"name": "UX-Scientist",
+	"version": "0.0.1",
+	"ignore": [
+		"node_modules"
+	],
+	"dependencies": {
+		"jquery": "latest"
+	},
+	"devDependencies": {}
+}
