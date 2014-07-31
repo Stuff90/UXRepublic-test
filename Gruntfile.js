@@ -9,10 +9,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
 
         config: {
-            src     : 'public',
-            assets  : 'assets',
-            app     : 'public/js/app',
-            less     : 'public/less',
+            js     : 'js',
+            css    : 'style',
+            less   : 'style/less',
         },
 
         watch: {
@@ -24,111 +23,50 @@ module.exports = function (grunt) {
                     reload: true,
                     interrupt: true
                 },
-            },
-            copy: {
-                tasks: ['copy:dev'],
-                files: '<%= config.app %>/{,*/}*.js'
-            },
-            js: {
-                files: '<%= config.app %>/**',
-                tasks: ['requirejs:dev']
             }
         },
 
-        copy: {
-            dev: {
-                files: [{
-                    dot: true,
-                    expand: true,
-                    flatten: true,
-                    dest: '<%= config.assets %>/js/',
-                    src: [
-                        '<%= config.src %>/js/lib/requirejs/require.js'
-                    ]
-                },{
-                    dot: true,
-                    expand: true,
-                    flatten:true,
-                    dest: '<%= config.assets %>/video',
-                    src: [
-                        '<%= config.src %>/video/*'
-                    ]
-                }]
-            },
-            prod: {
-                files: [{
-                    dot: true,
-                    expand: true,
-                    flatten: true,
-                    dest: '<%= config.assets %>/js/',
-                    src: [
-                        '<%= config.src %>/js/lib/requirejs/require.js'
-                    ]
-                },{
-                    dot: true,
-                    expand: true,
-                    flatten:true,
-                    dest: '<%= config.assets %>/video',
-                    src: [
-                        '<%= config.src %>/video/*'
-                    ]
-                }]
-            }
-        },
-
-        requirejs: {
-            dev: {
-                options: {
-                    name: "main",
-                    optimize: 'none',
-                    preserveLicenseComments: true,
-                    generateSourceMaps: true,
-                    removeCombined: true,
-                    useStrict: true,
-                    baseUrl: '<%= config.app %>',
-                    mainConfigFile: '<%= config.src %>/js/dev.js',
-                    out: '<%= config.assets %>/js/main.js',
-                    allowSourceOverwrites: true,
-                    keepBuildDir: true
-                }
-            },
-            prod: {
-                options: {
-                    name: "main",
-                    optimize: 'uglify',
-                    preserveLicenseComments: false,
-                    generateSourceMaps: false,
-                    removeCombined: true,
-                    useStrict: true,
-                    baseUrl: '<%= config.app %>',
-                    mainConfigFile: '<%= config.src %>/js/prod.js',
-                    out: '<%= config.assets %>/js/main.js',
-                    allowSourceOverwrites: true,
-                    keepBuildDir: true
-                }
-            }
-        },
 
         less: {
             dev: {
-                options: {
-                    sourceMap: false
-                },
                 files: {
-                    '<%= config.assets %>/css/style.css': '<%= config.less %>/main.less'
+                    '<%= config.css %>/main.min.css': '<%= config.less %>/main.less'
                 }
             },
             prod: {
                 options: {
-                    compress: true,
-                    report: true
+                    compress: true
                 },
                 files: {
-                    '<%= config.assets %>/css/style.css': '<%= config.less %>/main.less'
+                    '<%= config.css %>/main.min.css': '<%= config.less %>/main.less'
+                }
+            }
+        },
+
+        uglify: {
+            prod: {
+                options: {
+                    mangle: true
+                },
+                files: {
+                    '<%= config.js %>/main.min.js': [
+                        '<%= config.js %>/plugins/{,*/}*.js',
+                        '<%= config.js %>/main.js'
+                    ]
                 }
             }
         }
 
+    });
+
+
+
+    grunt.registerTask('prod', function (target) {
+
+        grunt.task.run([
+            'less:prod',
+            'uglify:prod'
+        ]);
     });
 
 };
