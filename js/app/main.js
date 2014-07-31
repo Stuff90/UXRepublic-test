@@ -1,7 +1,5 @@
-console.log("u");
-
 var $doc = $(document);
 
 $doc.ready(function() {
-    console.log("ready");
+	console.log('ready');
 });

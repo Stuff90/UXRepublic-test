@@ -22,7 +22,11 @@ module.exports = function (grunt) {
                     spawn: false,
                     reload: true,
                     interrupt: true
-                },
+                }
+            },
+            js: {
+                files: ['<%= config.js %>/app/{,*/}*.js'],
+                tasks: ['uglify:dev'],
             }
         },
 
@@ -44,14 +48,26 @@ module.exports = function (grunt) {
         },
 
         uglify: {
+            dev: {
+                options: {
+                    mangle: false,
+                    beautify:true
+                },
+                files: {
+                    '<%= config.js %>/main.min.js': [
+                        '<%= config.js %>/app/plugins/{,*/}*.js',
+                        '<%= config.js %>/app/main.js'
+                    ]
+                }
+            },
             prod: {
                 options: {
                     mangle: true
                 },
                 files: {
                     '<%= config.js %>/main.min.js': [
-                        '<%= config.js %>/plugins/{,*/}*.js',
-                        '<%= config.js %>/main.js'
+                        '<%= config.js %>/app/plugins/{,*/}*.js',
+                        '<%= config.js %>/app/main.js'
                     ]
                 }
             }

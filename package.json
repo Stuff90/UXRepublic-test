@@ -5,7 +5,7 @@
 	"author": "@simonbernard90",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/futureisblank/malakoff-mederic.git"
+		"url": "git@github.com:Stuff90/UXScientist-test.git"
 	},
 	"dependencies": {
 		"grunt": "~0.4.1",
