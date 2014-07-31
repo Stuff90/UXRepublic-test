@@ -6,5 +6,7 @@
 var $doc = $(document);
 
 $doc.ready(function() {
-	console.log('ready');
+	console.info('Page is ready !');
+
+	$doc.find('.calendar').calendar();
 });

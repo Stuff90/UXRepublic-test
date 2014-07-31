@@ -57,7 +57,10 @@ module.exports = function (grunt) {
                     '<%= config.js %>/main.min.js': [
                         '<%= config.js %>/lib/**/*.min.js',
                         '<%= config.js %>/app/plugins/{,*/}*.js',
-                        '<%= config.js %>/app/main.js'
+                        '<%= config.js %>/app/main.js',
+
+                        '!<%= config.js %>/lib/**/locales.min.js',
+                        '!<%= config.js %>/lib/**/moment-with-locales.min.js'
                     ]
                 }
             },
@@ -69,7 +72,10 @@ module.exports = function (grunt) {
                     '<%= config.js %>/main.min.js': [
                         '<%= config.js %>/lib/**/*.min.js',
                         '<%= config.js %>/app/plugins/{,*/}*.js',
-                        '<%= config.js %>/app/main.js'
+                        '<%= config.js %>/app/main.js',
+
+                        '!<%= config.js %>/lib/**/locales.min.js',
+                        '!<%= config.js %>/lib/**/moment-with-locales.min.js'
                     ]
                 }
             }

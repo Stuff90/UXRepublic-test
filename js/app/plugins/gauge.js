@@ -3,8 +3,4 @@
   - @simonbernard90
 */
 
-define(['jquery'], function ($) {
-
-   $.fn.gauge = function(){};
-
-});
+$.fn.gauge = function(){};

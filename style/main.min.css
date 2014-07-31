@@ -1,4 +1,12 @@
 /*
+@contributors :
+  - @simonbernard90
+*/
+/*
+@contributors :
+  - @simonbernard90
+*/
+/*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
@@ -156,4 +164,26 @@ hr {
 input,
 select {
   vertical-align: middle;
+}
+/*
+@contributors :
+  - @simonbernard90
+*/
+/*
+@contributors :
+  - @simonbernard90
+*/
+/*
+@contributors :
+  - @simonbernard90
+*/
+.ui-cal {
+  background: tan;
+}
+.ui-cal > .ui-cal-controls > ul > li {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 20px;
+  height: 20px;
 }
