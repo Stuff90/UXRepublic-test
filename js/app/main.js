@@ -1,3 +1,8 @@
+/*
+@contributors :
+  - @simonbernard90
+*/
+
 var $doc = $(document);
 
 $doc.ready(function() {

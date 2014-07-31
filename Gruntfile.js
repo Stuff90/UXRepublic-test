@@ -55,6 +55,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     '<%= config.js %>/main.min.js': [
+                        '<%= config.js %>/lib/**/*.min.js',
                         '<%= config.js %>/app/plugins/{,*/}*.js',
                         '<%= config.js %>/app/main.js'
                     ]
@@ -66,6 +67,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     '<%= config.js %>/main.min.js': [
+                        '<%= config.js %>/lib/**/*.min.js',
                         '<%= config.js %>/app/plugins/{,*/}*.js',
                         '<%= config.js %>/app/main.js'
                     ]
