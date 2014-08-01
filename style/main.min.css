@@ -1,1 +1,265 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #cccccc;margin:1em 0;padding:0}input,select{vertical-align:middle}.ui-cal{background:tan}.ui-cal>.ui-cal-controls>ul>li{display:inline-block;vertical-align:top;text-align:center;width:20px;height:20px}
+/*
+@contributors :
+  - @simonbernard90
+*/
+/*
+@contributors :
+  - @simonbernard90
+*/
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+  font-family: arial,serif;
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+nav ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
+/*
+@contributors :
+  - @simonbernard90
+*/
+/*
+@contributors :
+  - @simonbernard90
+*/
+/*
+@contributors :
+  - @simonbernard90
+*/
+.ui-cal {
+  background: tan;
+  width: 252px;
+  height: auto;
+  border-radius: 8px;
+}
+.ui-cal > .ui-cal-header,
+.ui-cal > .ui-cal-controls {
+  color: #ffffff;
+  background: #41454e;
+}
+.ui-cal > .ui-cal-header {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.ui-cal > .ui-cal-header > p {
+  text-align: center;
+  line-height: 80px;
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 19px;
+}
+.ui-cal > .ui-cal-header > p > span {
+  padding: 5px;
+}
+.ui-cal > .ui-cal-controls {
+  height: 60px;
+  position: relative;
+}
+.ui-cal > .ui-cal-controls > ul {
+  vertical-align: top;
+  display: inline-block;
+  position: absolute;
+  margin: auto auto auto 10px;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 20px;
+}
+.ui-cal > .ui-cal-controls > ul:last-child {
+  margin: auto 10px auto auto;
+  left: initial;
+  right: 0;
+}
+.ui-cal > .ui-cal-controls > ul > li {
+  font-size: 19px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 30px;
+  height: 20px;
+}
+.ui-cal > .ui-cal-controls > ul > li:hover {
+  cursor: pointer;
+}
+.ui-cal > .ui-cal-month {
+  background: #ffffff;
+}
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li,
+.ui-cal > .ui-cal-month > .ui-cal-date > li {
+  display: inline-block;
+  vertical-align: top;
+  width: 36px;
+  height: 36px;
+  background: tan;
+}
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li:nth-child(even),
+.ui-cal > .ui-cal-month > .ui-cal-date > li:nth-child(even) {
+  background: teal;
+}
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li.active,
+.ui-cal > .ui-cal-month > .ui-cal-date > li.active {
+  color: green;
+}
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li.today,
+.ui-cal > .ui-cal-month > .ui-cal-date > li.today {
+  background: red;
+}

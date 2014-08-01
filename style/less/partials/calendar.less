@@ -1,15 +1,74 @@
 .ui-cal {
 	background:tan;
-	> .ui-cal-header {}
-	> .ui-cal-controls {
-		> ul {
-			> li {
-				display:inline-block;
-				vertical-align:top;
-				text-align:center;
-				.size(20px,20px);
+	.size(252px,auto);
+	border-radius:8px;
+	> .ui-cal-header, > .ui-cal-controls {
+		color:@white;
+		background:@cal-gray;
+	}
+	> .ui-cal-header {
+		border-top-left-radius:8px;
+		border-top-right-radius:8px;
+		> p {
+			text-align:center;
+			line-height:80px;
+			padding-top:20px;
+			font-weight:bold;
+			font-size:19px;
+			> span {
+				padding:5px;
+				&:first-child {}
 			}
 		}
 	}
-	> .ui-cal-month {}
+	> .ui-cal-controls {
+		height:60px;
+		position:relative;
+		> ul {
+			vertical-align:top;
+			display:inline-block;
+			position:absolute;
+			margin:auto auto auto 10px;
+			bottom:0;
+			left:0;
+			top:0;
+			.size(60px,20px);
+			&:last-child {
+				margin:auto 10px auto auto;
+				left:initial;
+				right:0;
+			}
+			> li {
+				font-size:19px;
+				font-weight:bold;
+				display:inline-block;
+				vertical-align:top;
+				text-align:center;
+				.size(30px,20px);
+				&:hover {
+					cursor:pointer;
+				}
+			}
+		}
+	}
+	> .ui-cal-month {
+		background:@white;
+		> .ui-cal-weekdays, > .ui-cal-date {
+			> li {
+				display:inline-block;
+				vertical-align:top;
+				.size(36px,36px);
+				background:tan;
+				&:nth-child(even) {
+					background:teal;
+				}
+				&.active {
+					color:green;
+				}
+				&.today {
+					background:red;
+				}
+			}
+		}
+	}
 }
