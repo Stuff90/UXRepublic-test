@@ -97,56 +97,23 @@ module.exports = function (grunt) {
                     removeCombined: true,
                     useStrict: true,
                     baseUrl: '<%= config.js %>/app',
-                    mainConfigFile: '<%= config.js %>/prod.js',
+                    mainConfigFile: '<%= config.js %>/require.conf.js',
                     out: '<%= config.js %>/main.min.js',
                     allowSourceOverwrites: true,
                     keepBuildDir: true
                 }
             }
-        },
-
-        // uglify: {
-        //     dev: {
-        //         options: {
-        //             mangle: false,
-        //             beautify:true
-        //         },
-        //         files: {
-        //             '<%= config.js %>/main.min.js': [
-        //                 '<%= config.js %>/lib/**/*.min.js',
-        //                 '<%= config.js %>/app/plugins/{,*/}*.js',
-        //                 '<%= config.js %>/app/main.js',
-
-        //                 '!<%= config.js %>/lib/**/locales.min.js',
-        //                 '!<%= config.js %>/lib/**/moment-with-locales.min.js'
-        //             ]
-        //         }
-        //     },
-        //     prod: {
-        //         options: {
-        //             mangle: true
-        //         },
-        //         files: {
-        //             '<%= config.js %>/main.min.js': [
-        //                 '<%= config.js %>/lib/**/*.min.js',
-        //                 '<%= config.js %>/app/plugins/{,*/}*.js',
-        //                 '<%= config.js %>/app/main.js',
-
-        //                 '!<%= config.js %>/lib/**/locales.min.js',
-        //                 '!<%= config.js %>/lib/**/moment-with-locales.min.js'
-        //             ]
-        //         }
-        //     }
-        // }
+        }
 
     });
 
 
 
-    grunt.registerTask('prod', function (target) {
+    grunt.registerTask('prod', function () {
 
         grunt.task.run([
             'less:prod',
+            'copy:prod',
             'requirejs:prod'
         ]);
     });
