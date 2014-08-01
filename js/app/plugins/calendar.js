@@ -24,15 +24,15 @@ define(['jquery', 'moment'], function($, moment){
 				.last().text(calendar.activeDate.format('YYYY'));
 
 			datesWrapper.children().each(function(i){
-				var $date = $(this).empty();
+				var $date = $(this).removeClass('active today date').empty();
 				if(i >= drawingDate.format('e') && calendar.activeDate.format('MM') == drawingDate.format('MM')){
 
-					$date.removeClass('active today').text(drawingDate.format('D'))
+					$date.text(drawingDate.format('D'))
 						.addClass(function(){
-							var classes = '';
+							var classes = 'date ';
 
-							if(drawingDate.format('YYYY-MM-DD') == calendar.today.format('YYYY-MM-DD')) classes += 'today ';
-							if(drawingDate.format('YYYY-MM-DD') == calendar.activeDate.format('YYYY-MM-DD')) classes += 'active ';
+							if(drawingDate.format('YYYY-MM-DD') == calendar.today.format('YYYY-MM-DD')) classes += ' today';
+							if(drawingDate.format('YYYY-MM-DD') == calendar.activeDate.format('YYYY-MM-DD')) classes += ' active';
 
 							return classes;
 						});

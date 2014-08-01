@@ -56,19 +56,51 @@
 		> .ui-cal-weekdays, > .ui-cal-date {
 			> li {
 				display:inline-block;
+				font-weight:bold;
 				vertical-align:top;
+				border-radius:50%;
+				text-align:center;
+				line-height:36px;
+				position:relative;
+				color:@cal-light-gray;
 				.size(36px,36px);
-				background:tan;
-				&:nth-child(even) {
-					background:teal;
+				&.date:after, &.date:before {
+					border-radius:50%;
+					content:'';
+					position:absolute;
+					.size(6px,6px);
+					background:@cal-gray;
+					top:15px;
+					left:15px;
+					opacity:0;
+					.animation-play-state(paused);
+				}
+				&.date:hover:not(.active) {
+					cursor:pointer;
+					&:after, &:before {
+						.animation(fly-around 1s);
+						.animation-iteration-count(infinite);
+						.animation-play-state(running);
+					}
+					&:before {
+						.animation-delay(500ms);
+					}
 				}
 				&.active {
-					color:green;
+					background:@cal-gray;
+					color:@white;
 				}
-				&.today {
-					background:red;
+				&.today, &.today.active {
+					// text-decoration:underline;
+					border:solid 1px @cal-light-gray;
 				}
 			}
+		}
+		> .ui-cal-weekdays > li {
+			text-transform:uppercase;
+			line-height:50px;
+			.size(36px,50px);
+			color:@cal-gray;
 		}
 	}
 }

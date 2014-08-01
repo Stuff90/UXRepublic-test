@@ -183,6 +183,87 @@ select {
 @contributors :
   - @simonbernard90
 */
+@-webkit-keyframes fly-around {
+  0% {
+    -webkit-transform: translateX(20px) translateY(0px);
+    -moz-transform: translateX(20px) translateY(0px);
+    -ms-transform: translateX(20px) translateY(0px);
+    -o-transform: translateX(20px) translateY(0px);
+    transform: translateX(20px) translateY(0px);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateX(16.1803px) translateY(11.7557px);
+    -moz-transform: translateX(16.1803px) translateY(11.7557px);
+    -ms-transform: translateX(16.1803px) translateY(11.7557px);
+    -o-transform: translateX(16.1803px) translateY(11.7557px);
+    transform: translateX(16.1803px) translateY(11.7557px);
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: translateX(6.1803px) translateY(19.0211px);
+    -moz-transform: translateX(6.1803px) translateY(19.0211px);
+    -ms-transform: translateX(6.1803px) translateY(19.0211px);
+    -o-transform: translateX(6.1803px) translateY(19.0211px);
+    transform: translateX(6.1803px) translateY(19.0211px);
+  }
+  30% {
+    -webkit-transform: translateX(-6.1803px) translateY(19.0211px);
+    -moz-transform: translateX(-6.1803px) translateY(19.0211px);
+    -ms-transform: translateX(-6.1803px) translateY(19.0211px);
+    -o-transform: translateX(-6.1803px) translateY(19.0211px);
+    transform: translateX(-6.1803px) translateY(19.0211px);
+  }
+  40% {
+    -webkit-transform: translateX(-16.1803px) translateY(11.7557px);
+    -moz-transform: translateX(-16.1803px) translateY(11.7557px);
+    -ms-transform: translateX(-16.1803px) translateY(11.7557px);
+    -o-transform: translateX(-16.1803px) translateY(11.7557px);
+    transform: translateX(-16.1803px) translateY(11.7557px);
+  }
+  50% {
+    -webkit-transform: translateX(-20px) translateY(0px);
+    -moz-transform: translateX(-20px) translateY(0px);
+    -ms-transform: translateX(-20px) translateY(0px);
+    -o-transform: translateX(-20px) translateY(0px);
+    transform: translateX(-20px) translateY(0px);
+  }
+  60% {
+    -webkit-transform: translateX(-16.1803px) translateY(-11.7557px);
+    -moz-transform: translateX(-16.1803px) translateY(-11.7557px);
+    -ms-transform: translateX(-16.1803px) translateY(-11.7557px);
+    -o-transform: translateX(-16.1803px) translateY(-11.7557px);
+    transform: translateX(-16.1803px) translateY(-11.7557px);
+  }
+  70% {
+    -webkit-transform: translateX(-6.1803px) translateY(-19.0211px);
+    -moz-transform: translateX(-6.1803px) translateY(-19.0211px);
+    -ms-transform: translateX(-6.1803px) translateY(-19.0211px);
+    -o-transform: translateX(-6.1803px) translateY(-19.0211px);
+    transform: translateX(-6.1803px) translateY(-19.0211px);
+  }
+  80% {
+    -webkit-transform: translateX(6.1803px) translateY(-19.0211px);
+    -moz-transform: translateX(6.1803px) translateY(-19.0211px);
+    -ms-transform: translateX(6.1803px) translateY(-19.0211px);
+    -o-transform: translateX(6.1803px) translateY(-19.0211px);
+    transform: translateX(6.1803px) translateY(-19.0211px);
+  }
+  90% {
+    -webkit-transform: translateX(16.1803px) translateY(-11.7557px);
+    -moz-transform: translateX(16.1803px) translateY(-11.7557px);
+    -ms-transform: translateX(16.1803px) translateY(-11.7557px);
+    -o-transform: translateX(16.1803px) translateY(-11.7557px);
+    transform: translateX(16.1803px) translateY(-11.7557px);
+  }
+  100% {
+    -webkit-transform: translateX(20px) translateY(0px);
+    -moz-transform: translateX(20px) translateY(0px);
+    -ms-transform: translateX(20px) translateY(0px);
+    -o-transform: translateX(20px) translateY(0px);
+    transform: translateX(20px) translateY(0px);
+  }
+}
 .ui-cal {
   background: tan;
   width: 252px;
@@ -246,20 +327,77 @@ select {
 .ui-cal > .ui-cal-month > .ui-cal-weekdays > li,
 .ui-cal > .ui-cal-month > .ui-cal-date > li {
   display: inline-block;
+  font-weight: bold;
   vertical-align: top;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+  position: relative;
+  color: #bcc3cd;
   width: 36px;
   height: 36px;
-  background: tan;
 }
-.ui-cal > .ui-cal-month > .ui-cal-weekdays > li:nth-child(even),
-.ui-cal > .ui-cal-month > .ui-cal-date > li:nth-child(even) {
-  background: teal;
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li.date:after,
+.ui-cal > .ui-cal-month > .ui-cal-date > li.date:after,
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li.date:before,
+.ui-cal > .ui-cal-month > .ui-cal-date > li.date:before {
+  border-radius: 50%;
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #41454e;
+  top: 15px;
+  left: 15px;
+  opacity: 0;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li.date:hover:not(.active),
+.ui-cal > .ui-cal-month > .ui-cal-date > li.date:hover:not(.active) {
+  cursor: pointer;
+}
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li.date:hover:not(.active):after,
+.ui-cal > .ui-cal-month > .ui-cal-date > li.date:hover:not(.active):after,
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li.date:hover:not(.active):before,
+.ui-cal > .ui-cal-month > .ui-cal-date > li.date:hover:not(.active):before {
+  -webkit-animation: fly-around 1s;
+  -moz-animation: fly-around 1s;
+  -o-animation: fly-around 1s;
+  animation: fly-around 1s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+}
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li.date:hover:not(.active):before,
+.ui-cal > .ui-cal-month > .ui-cal-date > li.date:hover:not(.active):before {
+  -webkit-animation-delay: 500ms;
+  -moz-animation-delay: 500ms;
+  -o-animation-delay: 500ms;
+  animation-delay: 500ms;
 }
 .ui-cal > .ui-cal-month > .ui-cal-weekdays > li.active,
 .ui-cal > .ui-cal-month > .ui-cal-date > li.active {
-  color: green;
+  background: #41454e;
+  color: #ffffff;
 }
 .ui-cal > .ui-cal-month > .ui-cal-weekdays > li.today,
-.ui-cal > .ui-cal-month > .ui-cal-date > li.today {
-  background: red;
+.ui-cal > .ui-cal-month > .ui-cal-date > li.today,
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li.today.active,
+.ui-cal > .ui-cal-month > .ui-cal-date > li.today.active {
+  border: solid 1px #bcc3cd;
+}
+.ui-cal > .ui-cal-month > .ui-cal-weekdays > li {
+  text-transform: uppercase;
+  line-height: 50px;
+  width: 36px;
+  height: 50px;
+  color: #41454e;
 }
