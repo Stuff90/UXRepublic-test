@@ -26,7 +26,32 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ['<%= config.js %>/app/{,*/}*.js'],
-                tasks: ['uglify:dev'],
+                tasks: ['copy:dev', 'requirejs:dev'],
+            }
+        },
+
+        copy: {
+            dev: {
+                files: [{
+                    dot: true,
+                    expand: true,
+                    flatten: true,
+                    dest: '<%= config.js %>/',
+                    src: [
+                        '<%= config.js %>/lib/requirejs/require.js'
+                    ]
+                }]
+            },
+            prod: {
+                files: [{
+                    dot: true,
+                    expand: true,
+                    flatten: true,
+                    dest: '<%= config.js %>/',
+                    src: [
+                        '<%= config.js %>/lib/requirejs/require.js'
+                    ]
+                }]
             }
         },
 
@@ -47,39 +72,72 @@ module.exports = function (grunt) {
             }
         },
 
-        uglify: {
+        requirejs: {
             dev: {
                 options: {
-                    mangle: false,
-                    beautify:true
-                },
-                files: {
-                    '<%= config.js %>/main.min.js': [
-                        '<%= config.js %>/lib/**/*.min.js',
-                        '<%= config.js %>/app/plugins/{,*/}*.js',
-                        '<%= config.js %>/app/main.js',
-
-                        '!<%= config.js %>/lib/**/locales.min.js',
-                        '!<%= config.js %>/lib/**/moment-with-locales.min.js'
-                    ]
+                    name: "main",
+                    optimize: 'none',
+                    preserveLicenseComments: true,
+                    generateSourceMaps: true,
+                    removeCombined: true,
+                    useStrict: true,
+                    baseUrl: '<%= config.js %>/app',
+                    mainConfigFile: '<%= config.js %>/require.conf.dev.js',
+                    out: '<%= config.js %>/main.min.js',
+                    allowSourceOverwrites: true,
+                    keepBuildDir: true
                 }
             },
             prod: {
                 options: {
-                    mangle: true
-                },
-                files: {
-                    '<%= config.js %>/main.min.js': [
-                        '<%= config.js %>/lib/**/*.min.js',
-                        '<%= config.js %>/app/plugins/{,*/}*.js',
-                        '<%= config.js %>/app/main.js',
-
-                        '!<%= config.js %>/lib/**/locales.min.js',
-                        '!<%= config.js %>/lib/**/moment-with-locales.min.js'
-                    ]
+                    name: "main",
+                    optimize: 'uglify',
+                    preserveLicenseComments: false,
+                    generateSourceMaps: false,
+                    removeCombined: true,
+                    useStrict: true,
+                    baseUrl: '<%= config.js %>/app',
+                    mainConfigFile: '<%= config.js %>/prod.js',
+                    out: '<%= config.js %>/main.min.js',
+                    allowSourceOverwrites: true,
+                    keepBuildDir: true
                 }
             }
-        }
+        },
+
+        // uglify: {
+        //     dev: {
+        //         options: {
+        //             mangle: false,
+        //             beautify:true
+        //         },
+        //         files: {
+        //             '<%= config.js %>/main.min.js': [
+        //                 '<%= config.js %>/lib/**/*.min.js',
+        //                 '<%= config.js %>/app/plugins/{,*/}*.js',
+        //                 '<%= config.js %>/app/main.js',
+
+        //                 '!<%= config.js %>/lib/**/locales.min.js',
+        //                 '!<%= config.js %>/lib/**/moment-with-locales.min.js'
+        //             ]
+        //         }
+        //     },
+        //     prod: {
+        //         options: {
+        //             mangle: true
+        //         },
+        //         files: {
+        //             '<%= config.js %>/main.min.js': [
+        //                 '<%= config.js %>/lib/**/*.min.js',
+        //                 '<%= config.js %>/app/plugins/{,*/}*.js',
+        //                 '<%= config.js %>/app/main.js',
+
+        //                 '!<%= config.js %>/lib/**/locales.min.js',
+        //                 '!<%= config.js %>/lib/**/moment-with-locales.min.js'
+        //             ]
+        //         }
+        //     }
+        // }
 
     });
 
@@ -89,7 +147,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'less:prod',
-            'uglify:prod'
+            'requirejs:prod'
         ]);
     });
 

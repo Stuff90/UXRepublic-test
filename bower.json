@@ -5,6 +5,7 @@
 		"node_modules"
 	],
 	"dependencies": {
+    	"requirejs": "~2.1.9",
 		"jquery": "~2.1.1",
 		"moment": "latest"
 	},
