@@ -13,13 +13,12 @@ define(['jquery', 'moment'], function($, moment){
 		calendar.activeDate = new moment();
 		calendar.shownDate 	= new moment().date(1);
 
-		calendar.draw = function(){
-			var headerWrapper 	= calendar.$root.find('.ui-cal-header'),
-				datesWrapper 	= calendar.$root.find('.ui-cal-date').children(),
+		calendar.draw = function($root){
+			var headerWrapper 	= $root.find('.ui-cal-header'),
+				datesWrapper 	= $root.find('.ui-cal-date').children(),
 				drawingMonth	= calendar.shownDate.format('MM');
 
 			calendar.shownDate.date(1);
-
 
 			headerWrapper.find('span')
 				.text(calendar.shownDate.format('MMMM'))
@@ -53,8 +52,9 @@ define(['jquery', 'moment'], function($, moment){
 
 		calendar.updateDate = function(e, root){
 			e.preventDefault();
-			calendar.activeDate.dayOfYear($(e.target).data('date'));
-			calendar.draw();
+			var $target = $(e.target);
+			calendar.activeDate.dayOfYear($target.data('date'));
+			calendar.draw($target.closest('.calendar'));
 		}
 
 		calendar.updateMY = function(e, root){
@@ -63,11 +63,11 @@ define(['jquery', 'moment'], function($, moment){
 			calendar.shownDate
 				[ $target.parent('.next').length !== 0 ? 'add' : 'subtract' ]
 				(1, $target.text().length == 1 ? 'month' : 'year' );
-			calendar.draw();
+			calendar.draw($target.closest('.calendar'));
 		}
 
 		calendar.buildLayout = function(i, root){
-			calendar.$root = $(root);
+			var self = $(this);
 
 			var header = $('<div>').addClass('ui-cal-header')
 							.append($('<p>')
@@ -102,9 +102,9 @@ define(['jquery', 'moment'], function($, moment){
 							}))
 
 
-			calendar.$root.addClass('ui-cal').append(header, controls, month);
-			calendar.draw();
-		}
+			self.addClass('ui-cal').append(header, controls, month);
+			calendar.draw(self);
+		};
 
 		return this.each(calendar.buildLayout);
 	};

@@ -264,8 +264,72 @@ select {
     transform: translateX(20px) translateY(0px);
   }
 }
+.ui-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+.ui-slider > .ui-slider-trig,
+.ui-slider > .ui-slider-dots {
+  position: fixed;
+}
+.ui-slider > .ui-slider-trig {
+  width: 50px;
+  height: 50px;
+  background: #41454e;
+  border: solid 1px #bcc3cd;
+  text-align: center;
+  line-height: 50px;
+  color: #ffffff;
+  font-weight: blold;
+  font-size: 19px;
+  border-radius: 50%;
+  left: 2%;
+  bottom: 4%;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+.ui-slider > .ui-slider-trig.ui-slider-right {
+  left: initial;
+  right: 2%;
+}
+.ui-slider > .ui-slider-trig:hover {
+  color: #41454e;
+  cursor: pointer;
+  background: #bcc3cd;
+}
+.ui-slider > .ui-slider-tile {
+  -webkit-transition: all 600ms ease-out;
+  -moz-transition: all 600ms ease-out;
+  -ms-transition: all 600ms ease-out;
+  -o-transition: all 600ms ease-out;
+  transition: all 600ms ease-out;
+  width: 260px;
+  height: 450px;
+  position: absolute;
+  opacity: 0;
+}
+.ui-slider > .ui-slider-tile.active {
+  opacity: 1;
+  left: 30%;
+}
+.ui-slider > .ui-slider-tile:nth-child(3n+1) {
+  left: -100%;
+  top: 50%;
+}
+.ui-slider > .ui-slider-tile:nth-child(3n+2) {
+  left: 100%;
+  top: 25%;
+}
+.ui-slider > .ui-slider-tile:nth-child(3n+3) {
+  left: 50%;
+  top: -50%;
+}
 .ui-cal {
-  background: tan;
   width: 254px;
   height: auto;
   border-radius: 8px;
