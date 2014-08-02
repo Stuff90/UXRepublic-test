@@ -266,9 +266,10 @@ select {
 }
 .ui-cal {
   background: tan;
-  width: 252px;
+  width: 254px;
   height: auto;
   border-radius: 8px;
+  overflow: hidden;
 }
 .ui-cal > .ui-cal-header,
 .ui-cal > .ui-cal-controls {
@@ -322,6 +323,9 @@ select {
   cursor: pointer;
 }
 .ui-cal > .ui-cal-month {
+  border: solid 1px #bcc3cd;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   background: #ffffff;
 }
 .ui-cal > .ui-cal-month > .ui-cal-weekdays > li,
