@@ -332,10 +332,16 @@ select {
   border-radius: 50%;
   text-align: center;
   line-height: 36px;
+  background: #ffffff;
   position: relative;
   color: #bcc3cd;
   width: 36px;
   height: 36px;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
 }
 .ui-cal > .ui-cal-month > .ui-cal-weekdays > li.date:after,
 .ui-cal > .ui-cal-month > .ui-cal-date > li.date:after,
@@ -350,6 +356,7 @@ select {
   top: 15px;
   left: 15px;
   opacity: 0;
+  z-index: 9;
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
   -o-animation-play-state: paused;

@@ -61,9 +61,11 @@
 				border-radius:50%;
 				text-align:center;
 				line-height:36px;
+				background:@white;
 				position:relative;
 				color:@cal-light-gray;
 				.size(36px,36px);
+				.transition(all 200ms ease-in);
 				&.date:after, &.date:before {
 					border-radius:50%;
 					content:'';
@@ -73,6 +75,7 @@
 					top:15px;
 					left:15px;
 					opacity:0;
+					z-index:9;
 					.animation-play-state(paused);
 				}
 				&.date:hover:not(.active) {
@@ -91,7 +94,6 @@
 					color:@white;
 				}
 				&.today, &.today.active {
-					// text-decoration:underline;
 					border:solid 1px @cal-light-gray;
 				}
 			}
