@@ -186,6 +186,99 @@ select {
 body {
   background: url('../img/halftone.png');
 }
+body .about {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 13px;
+}
+body #titles {
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 100%;
+  height: 300px;
+}
+body #titles .forecast > ul {
+  float: left;
+}
+body #titles .forecast > p {
+  color: #8c94a4;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 12px 15px 15px 65px;
+}
+body #titles .settings,
+body #titles .setup,
+body #titles .peoples {
+  margin: 15px auto;
+  line-height: 30px;
+  vertical-align: bottom;
+  font-size: 28px;
+  font-weight: bold;
+}
+body #titles .settings {
+  position: relative;
+  padding-left: 50px;
+  text-transform: uppercase;
+  color: #00eb83;
+}
+body #titles .settings:before {
+  left: 0;
+  margin-top: -5px;
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body #titles .settings:before {
+  background-image: url('../img/icon-grinding-gear-65x65.png');
+}
+body #titles .setup,
+body #titles .peoples {
+  text-transform: capitalize;
+  color: #8c94a4;
+}
+body #titles .setup {
+  position: relative;
+  padding-left: 50px;
+}
+body #titles .setup:before {
+  left: 0;
+  margin-top: -5px;
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body #titles .setup:before {
+  background-image: url('../img/icon-setup-65x65.png');
+}
+body #titles .peoples {
+  position: relative;
+  padding-left: 50px;
+  font-size: 22px;
+}
+body #titles .peoples:before {
+  left: 0;
+  margin-top: -5px;
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body #titles .peoples:before {
+  background-image: url('../img/icon-peoples-65x65.png');
+}
 /*
 @contributors :
   - @simonbernard90
@@ -420,6 +513,75 @@ body {
     -o-transform: translateX(20px) translateY(0px);
     transform: translateX(20px) translateY(0px);
   }
+}
+/*
+@contributors :
+  - @simonbernard90
+*/
+.ui-setup {
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  margin: 0;
+  list-style-type: none;
+  padding: 5px 0;
+}
+.ui-setup > li {
+  margin: 0 10px 0 30px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  border: solid 3px #ffffff;
+  width: 13px;
+  height: 13px;
+  background: #8c94a4;
+}
+.ui-setup > li:before,
+.ui-setup > li:after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 4px;
+  background: #8c94a4;
+  top: 2px;
+}
+.ui-setup > li:before {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  left: -33px;
+  width: 30px;
+  height: 4px;
+}
+.ui-setup > li:after {
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  left: 10px;
+}
+.ui-setup > li:first-child {
+  margin-left: 5px;
+}
+.ui-setup > li:first-child:before {
+  left: -8px;
+  width: 5px;
+  height: 4px;
+}
+.ui-setup > li:first-child:after {
+  left: 10px;
+  width: 32px;
+  height: 4px;
+}
+.ui-setup > li:last-child {
+  margin-left: 10px;
+}
+.ui-setup > li:last-child:before {
+  left: -13px;
+  width: 10px;
+  height: 4px;
+}
+.ui-setup > li:last-child:after {
+  left: 10px;
+  width: 28px;
+  height: 4px;
 }
 .ui-slider {
   width: 100%;

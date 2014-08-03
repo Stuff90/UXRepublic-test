@@ -63,5 +63,42 @@
 }
 
 
+.icon() {
+	position:relative;
+	padding-left:50px;
+	&:before {
+		left:0;
+		margin-top:-5px;
+		content:'';
+		position:absolute;
+		.size(40px,40px);
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position:center;
+	}
+}
 
+
+.icon-grinding-gear() {
+	.icon();
+	&:before {
+		background-image:url('../img/icon-grinding-gear-65x65.png');
+	}
+}
+
+
+.icon-setup() {
+	.icon();
+	&:before {
+		background-image:url('../img/icon-setup-65x65.png');
+	}
+}
+
+
+.icon-peoples() {
+	.icon();
+	&:before {
+		background-image:url('../img/icon-peoples-65x65.png');
+	}
+}
 

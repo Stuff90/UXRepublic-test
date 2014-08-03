@@ -1,0 +1,63 @@
+/*
+@contributors :
+  - @simonbernard90
+*/
+
+
+
+.ui-setup {
+	.size(50px, 50px);
+	background:@white;
+	margin:0;
+	list-style-type:none;
+	padding:5px 0;
+	> li {
+		margin:0 10px 0 30px;
+		display:block;
+		border-radius:50%;
+		position:relative;
+		border:solid 3px @white;
+		.size(13px,13px);
+		background:@stock-gray;
+		&:before, &:after {
+			content:'';
+			position:absolute;
+			.size(8px,4px);
+			background:@stock-gray;
+			top:2px;
+		}
+		&:before {
+			border-bottom-left-radius:2px;
+			border-top-left-radius:2px;
+			left:-33px;
+			.size(30px,4px);
+		}
+		&:after {
+			border-bottom-right-radius:2px;
+			border-top-right-radius:2px;
+			left:10px;
+		}
+		&:first-child {
+			margin-left:5px;
+			&:before {
+				left:-8px;
+				.size(5px,4px);
+			}
+			&:after {
+				left:10px;
+				.size(32px,4px);
+			}
+		}
+		&:last-child {
+			margin-left:10px;
+			&:before {
+				left:-13px;
+				.size(10px,4px);
+			}
+			&:after {
+				left:10px;
+				.size(28px,4px);
+			}
+		}
+	}
+}

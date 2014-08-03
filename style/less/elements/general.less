@@ -5,4 +5,58 @@
 
 body {
 	background:url('../img/halftone.png');
+
+	.about {
+		background:@white;
+		border-radius:8px;
+		padding:20px;
+		font-size:13px;
+	}
+
+	#titles {
+		background:@white;
+		padding:10px 20px;
+		border-radius:8px;
+		.size(100%,300px);
+
+		.forecast {
+			> ul {
+				float:left;
+			}
+			> p {
+				color:@stock-gray;
+				font-weight:bold;
+				font-size:24px;
+				padding:12px 15px 15px 65px;
+			}
+		}
+
+		.settings, .setup, .peoples {
+			margin:15px auto;
+			line-height:30px;
+			vertical-align:bottom;
+			font-size:28px;
+			font-weight:bold;
+		}
+
+		.settings {
+			.icon-grinding-gear();
+			text-transform:uppercase;
+			color:@stock-green;
+		}
+
+		.setup, .peoples {
+			text-transform:capitalize;
+			color:@stock-gray;
+		}
+
+		.setup {
+			.icon-setup();
+		}
+		.peoples {
+			.icon-peoples();
+			font-size:22px;
+		}
+	}
 }
+
