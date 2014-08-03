@@ -8,6 +8,7 @@
 		"url": "git@github.com:Stuff90/UXScientist-test.git"
 	},
 	"dependencies": {
+		"bower": "latest",
 		"grunt": "~0.4.1",
 		"grunt-contrib-less": "~0.8.3",
 		"grunt-contrib-watch": "~0.5.3",
