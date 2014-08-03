@@ -9,7 +9,8 @@ require([
  	'jquery',
 
  	'plugins/slider',
- 	'plugins/calendar'
+ 	'plugins/calendar',
+ 	'plugins/gauge'
 
 ], function($){
 
@@ -20,6 +21,12 @@ require([
 
 		$doc.find('.slider').slider();
 		$doc.find('.calendar').calendar();
+
+		var gauges = $doc.find('.gauge-wrapper').gauge();
+
+		gauges.closest('.tile').on('slider:tile:ready', function(){
+		 	$(this).find('.gauge-wrapper').trigger('gauge:draw');
+		})
 	});
 
 });

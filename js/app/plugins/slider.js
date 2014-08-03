@@ -19,6 +19,7 @@ define(['jquery'], function($){
 					var W = $theTile.parent().width(),
 						H = $theTile.parent().height();
 
+
 					if(i == 0) {
 						$theTile.css({
 							top:'5%',
@@ -35,6 +36,10 @@ define(['jquery'], function($){
 							left:(100 * (W / 2 - 200) / W) + '%'
 						});
 					}
+
+					setTimeout(function() {
+						$theTile.trigger('slider:tile:ready');
+					}, 600);
 				}($(this).addClass('active')), 100 * i + 100);
 			});
 		}

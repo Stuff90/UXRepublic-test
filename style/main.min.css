@@ -183,6 +183,13 @@ select {
 @contributors :
   - @simonbernard90
 */
+.stocks > dl > * {
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+  padding: 5px;
+  text-align: center;
+}
 @-webkit-keyframes fly-around {
   0% {
     -webkit-transform: translateX(20px) translateY(0px);
@@ -318,16 +325,16 @@ select {
   left: 30%;
 }
 .ui-slider > .ui-slider-tile:nth-child(3n+1) {
-  left: -100%;
-  top: 50%;
+  left: 50%;
+  top: -50%;
 }
 .ui-slider > .ui-slider-tile:nth-child(3n+2) {
   left: 100%;
   top: 25%;
 }
 .ui-slider > .ui-slider-tile:nth-child(3n+3) {
-  left: 50%;
-  top: -50%;
+  left: -100%;
+  top: 50%;
 }
 .ui-cal {
   width: 254px;
