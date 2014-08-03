@@ -1,10 +1,12 @@
-UX-Scientist test technique
+UX-Republic test technique
 ================
 
 
-Install project:
+Install project
 ```
 $ npm install
 $ bower install
 $ grunt prod
 ```
+
+[See it in action](http://simon-bernard.fr/uxrepublic/)

@@ -32,7 +32,7 @@ define(['jquery'], function($){
 						});
 					} else {
 						$theTile.css({
-							top:((100 * $theTile.height() / W) + 25 ) + '%',
+							top:((100 * $theTile.height() / H) + 5 ) + '%',
 							left:(100 * (W / 2 - 200) / W) + '%'
 						});
 					}
